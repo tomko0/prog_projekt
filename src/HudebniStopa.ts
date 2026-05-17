@@ -1,6 +1,3 @@
-// Abstraktní bázová třída – společný základ pro všechny typy stop.
-// Nelze vytvořit instanci přímo – musíme použít potomka.
-
 export abstract class HudebniStopa {
   // protected = přístupné v této třídě i v potomcích, ale ne zvenčí
   protected _id: number;
@@ -32,7 +29,7 @@ export abstract class HudebniStopa {
   get delkaSekund(): number { return this._delkaSekund; }
   get pocetKopii(): number { return this._pocetKopii; }
 
-  // --- Setter s validací ---
+  // Setter s validací 
   set pocetKopii(hodnota: number) {
     if (!Number.isInteger(hodnota) || hodnota < 1) {
       throw new Error("Počet kopií musí být alespoň 1.");
@@ -44,7 +41,7 @@ export abstract class HudebniStopa {
   formatujDelku(): string {
     const min = Math.floor(this._delkaSekund / 60);
     const sek = this._delkaSekund % 60;
-    return `${min}:${sek.toString().padStart(2, "0")}`;
+    return `${min}:${sek < 10 ? "0" + sek : sek}`;
   }
 
   // Abstraktní metody – každý potomek si je musí implementovat sám.

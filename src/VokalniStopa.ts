@@ -1,4 +1,4 @@
-import { HudebniStopa } from "./hudebnistopa";
+import { HudebniStopa } from "./HudebniStopa.js";
 
 // Potomek č. 1 – vokální stopa.
 // Přidává příplatek za studiového zvukaře (per vrstva overdubů).
