@@ -1,13 +1,9 @@
 import { HudebniStopa } from "./HudebniStopa.js";
 
-// Potomek č. 1 – vokální stopa.
-// Přidává příplatek za studiového zvukaře (per vrstva overdubů).
-
 export class VokalniStopa extends HudebniStopa {
   private _pocetVrstev!: number;
 
-  // Statická konstanta – patří třídě, ne instanci
-  private static readonly CENA_ZVUKARE_NA_VRSTVU: number = 500; // Kč
+  private static readonly CENA_ZVUKARE_NA_VRSTVU: number = 500;
 
   constructor(
     id: number,
@@ -18,7 +14,6 @@ export class VokalniStopa extends HudebniStopa {
     pocetKopii: number,
     pocetVrstev: number
   ) {
-    // super() zavolá konstruktor rodičovské třídy
     super(id, nazev, interpret, delkaSekund, zakladniCenaLicence, pocetKopii);
     this.pocetVrstev = pocetVrstev;
   }
@@ -32,7 +27,6 @@ export class VokalniStopa extends HudebniStopa {
     this._pocetVrstev = hodnota;
   }
 
-  // Implementace abstraktní metody z rodiče
   vypoctiCenu(): number {
     const licenceCelkem = this._zakladniCenaLicence * this.pocetKopii;
     const priplatekZvukar = this._pocetVrstev * VokalniStopa.CENA_ZVUKARE_NA_VRSTVU;

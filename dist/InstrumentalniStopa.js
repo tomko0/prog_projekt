@@ -11,7 +11,6 @@ export class InstrumentalniStopa extends HudebniStopa {
     vypoctiCenu() {
         var _a;
         const licenceCelkem = this._zakladniCenaLicence * this.pocetKopii;
-        // Pokud si uživatel nepronajímá nástroj, příplatek je 0
         const priplatekPronajem = this._pronajem
             ? ((_a = PRONAJEM_NASTROJE[this._typNastroje]) !== null && _a !== void 0 ? _a : 400)
             : 0;

@@ -4,21 +4,16 @@ import { InstrumentalniStopa } from "./InstrumentalniStopa.js";
 import { HudebniStopa } from "./HudebniStopa.js";
 import { Session } from "./Session.js";
 
-// Oživení objektů z datového číselníku 
-// Surová data z katalogu se zde přeměňují na "živé" instance tříd.
-// Toto je klíčový moment – objekt získá veškerou inteligenci třídy.
 const stopy: HudebniStopa[] = [
-  // Z položky katalogu[0] vytvoříme vokální stopu
   new VokalniStopa(
     katalog[0].id,
     katalog[0].nazev,
     katalog[0].interpret,
     katalog[0].delkaSekund,
     katalog[0].zakladniCenaLicence,
-    2,  // počet kopií – zadává uživatel
-    3   // počet hlasových vrstev – zadává uživatel
+    2,
+    3 
   ),
-  // Z položky katalogu[1] vytvoříme další vokální stopu
   new VokalniStopa(
     katalog[1].id,
     katalog[1].nazev,
@@ -28,7 +23,7 @@ const stopy: HudebniStopa[] = [
     1,
     1
   ),
-  // Z položky katalogu[2] vytvoříme instrumentální stopu
+
   new InstrumentalniStopa(
     katalog[2].id,
     katalog[2].nazev,
@@ -37,9 +32,9 @@ const stopy: HudebniStopa[] = [
     katalog[2].zakladniCenaLicence,
     2,
     "Bicí",
-    true  // pronájem nástroje
+    true
   ),
-  // Z položky katalogu[3] vytvoříme instrumentální stopu bez pronájmu
+
   new InstrumentalniStopa(
     katalog[3].id,
     katalog[3].nazev,

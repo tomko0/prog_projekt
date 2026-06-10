@@ -7,7 +7,106 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hudební studiový manažer</h1>
-  <script type="module" src="dist/test.js"></script>
+
+  <header>
+    <h1>🎵 Hudební studiový manažer</h1>
+    <p>Sestavte svou nahrávací relaci</p>
+  </header>
+
+  <main>
+
+    <section class="formular">
+      <h2>Přidat stopu</h2>
+
+      <label for="nazev">Název skladby:</label>
+      <input type="text" id="nazev" placeholder="např. Noční jízda" />
+
+      <label for="interpret">Interpret:</label>
+      <input type="text" id="interpret" placeholder="např. Karel Novák" />
+
+      <label>Délka skladby:</label>
+      <div class="delka-row">
+        <div>
+          <input type="number" id="minuty" value="3" min="0" max="59" />
+          <span class="delka-label">min</span>
+        </div>
+        <div>
+          <input type="number" id="sekundy" value="30" min="0" max="59" />
+          <span class="delka-label">sek</span>
+        </div>
+      </div>
+
+      <label for="zakladni-cena">Základní cena licence (Kč / kopie):</label>
+      <input type="number" id="zakladni-cena" value="1000" min="1" />
+
+      <label for="pocet-kopii">Počet kopií:</label>
+      <input type="number" id="pocet-kopii" value="1" min="1" />
+
+      <label for="typ-stopy">Typ stopy:</label>
+      <select id="typ-stopy">
+        <option value="vokal">Vokální</option>
+        <option value="instrumental">Instrumentální</option>
+      </select>
+
+      <div id="pole-vokal">
+        <label for="pocet-vrstev">Počet hlasových vrstev (1–10):</label>
+        <input type="number" id="pocet-vrstev" value="1" min="1" max="10" />
+        <p class="poznamka">Příplatek za zvukaře: 500 Kč / vrstva</p>
+      </div>
+
+      <div id="pole-instr" style="display:none">
+        <label for="typ-nastroje">Typ nástroje:</label>
+        <select id="typ-nastroje"></select>
+
+        <label style="margin-top: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+          <input type="checkbox" id="pronajem" />
+          Pronájem nástroje
+        </label>
+      </div>
+
+      <button id="btn-pridat">➕ Přidat do relace</button>
+    </section>
+
+    <section class="tabulka">
+      <h2>Nahrávací relace</h2>
+      <div class="tabulka-obal">
+        <table>
+          <thead>
+            <tr>
+              <th>Název</th>
+              <th>Interpret</th>
+              <th>Typ</th>
+              <th>Délka</th>
+              <th>Kopií</th>
+              <th>Cena</th>
+              <th>Odebrat</th>
+            </tr>
+          </thead>
+          <tbody id="tabulka-body">
+            <tr>
+              <td colspan="7" class="tabulka-prazdna">
+                Zatím nebyla přidána žádná stopa.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="souhrn">
+      <p>
+        <span>Celkem bez DPH</span>
+        <strong id="cena-bez-dph">0 Kč</strong>
+      </p>
+      <p>
+        <span>Celkem s DPH (21 %)</span>
+        <strong id="cena-s-dph">0 Kč</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <script type="module" src="dist/main.js"></script>
+
 </body>
 </html>

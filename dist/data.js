@@ -5,7 +5,6 @@ export const katalog = [
     { id: 4, nazev: "Tiché ráno", interpret: "Petr Marek", delkaSekund: 165, zakladniCenaLicence: 900 },
     { id: 5, nazev: "Elektrický sen", interpret: "DJ Omega", delkaSekund: 300, zakladniCenaLicence: 1800 },
 ];
-// typy nástrojů a jejich ceny k pronájmu (kč/session)
 export const PRONAJEM_NASTROJE = {
     "Kytara": 300,
     "Bicí": 800,
@@ -13,5 +12,5 @@ export const PRONAJEM_NASTROJE = {
     "Baskytara": 250,
     "Syntezátor": 700,
 };
-export const DPH = 1.21; // 21 %
+export const DPH = 1.21;
 //# sourceMappingURL=data.js.map

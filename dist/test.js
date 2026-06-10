@@ -2,7 +2,7 @@ import { katalog } from "./data.js";
 import { VokalniStopa } from "./VokalniStopa.js";
 import { InstrumentalniStopa } from "./InstrumentalniStopa.js";
 import { Session } from "./Session.js";
-// ── Oživení objektů z datového číselníku ───────────────────
+// Oživení objektů z datového číselníku 
 // Surová data z katalogu se zde přeměňují na "živé" instance tříd.
 // Toto je klíčový moment – objekt získá veškerou inteligenci třídy.
 const stopy = [

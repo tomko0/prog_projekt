@@ -21,7 +21,7 @@ export class Session {
   }
 
   get stopy(): HudebniStopa[] {
-    return [...this._stopy]; // vrátíme kopii, ne originál
+    return [...this._stopy];
   }
 
   get pocetStop(): number {

@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #3C3489;
+}
+
+header p {
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.formular {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.formular h2 {
+  color: #3C3489;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.formular label {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.formular select,
+.formular input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formular select:focus,
+.formular input[type="number"]:focus {
+  outline: none;
+  border-color: #3C3489;
+  box-shadow: 0 0 0 2px rgba(60,52,137,0.15);
+}
+
+#pole-vokal,
+#pole-instr {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: #f5f4fe;
+  border-radius: 8px;
+  border-left: 3px solid #3C3489;
+}
+
+#btn-pridat {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 0.7rem;
+  background: #3C3489;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btn-pridat:hover {
+  background: #2a2460;
+}
+
+#btn-pridat:active {
+  background: #1e1945;
+}
+
+.tabulka h2 {
+  color: #3C3489;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.tabulka-obal {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+th {
+  background: #3C3489;
+  color: white;
+  padding: 0.8rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tbody tr:hover {
+  background: #f0effe;
+}
+
+td button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+td button:hover {
+  background: #c0392b;
+}
+
+/* Prázdná tabulka */
+.tabulka-prazdna {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.souhrn {
+  grid-column: 1 / -1;
+  text-align: right;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.souhrn p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.souhrn span {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.souhrn strong {
+  color: #3C3489;
+  font-size: 1.2rem;
+}
+
+.delka-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.delka-row div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.delka-row input {
+  flex: 1;
+}
+
+.delka-label {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.poznamka {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.formular input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formular input[type="text"]:focus {
+  outline: none;
+  border-color: #3C3489;
+  box-shadow: 0 0 0 2px rgba(60,52,137,0.15);
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .formular {
+    max-width: 100%;
+  }
+
+  .souhrn {
+    grid-column: 1;
+  }
+}
+
+/* Mobily */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .formular {
+    padding: 1rem;
+  }
+
+  .formular h2,
+  .tabulka h2 {
+    font-size: 1.1rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .souhrn {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .souhrn p {
+    align-items: center;
+  }
+
+  #btn-pridat {
+    padding: 0.8rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Velmi malé mobily */
+@media (max-width: 380px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  th, td {
+    padding: 0.4rem;
+    font-size: 0.78rem;
+  }
+}

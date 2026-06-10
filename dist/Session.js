@@ -16,7 +16,7 @@ export class Session {
         return this.celkovaCenaBezDPH() * DPH;
     }
     get stopy() {
-        return [...this._stopy]; // vrátíme kopii, ne originál
+        return [...this._stopy];
     }
     get pocetStop() {
         return this._stopy.length;
